@@ -28,7 +28,7 @@ resource "aws_instance" "web_server" {
     python3 -m ensurepip --default-pip
     pip install --upgrade pip
     pip install flask boto3 gunicorn
-    echo "net.ipv4.ip_forward=1" | sudo tee /etc/sysctl.d/99-ip-forward.conf
+    echo "net.ipv4.ip_forward=1" | sudo tee /etc/sysctl.d/99-ip-forward.conf # Important
     sudo sysctl --system
 
     echo "=== Creating Flask application ==="
